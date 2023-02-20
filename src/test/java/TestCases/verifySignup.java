@@ -8,38 +8,48 @@ import org.testng.annotations.Test;
 import PageObjectModel.LoginPageObjects;
 import PageObjectModel.SignupPageObjects;
 import Resources.baseClass;
+import Resources.commonMethods;
+import Resources.constants;
 
 public class verifySignup extends baseClass {
 	@Test
 	public void signup() throws IOException, InterruptedException {
-	
-		driverInitilize();
-		// This driver dont have scope
-		driver.get("https://login.salesforce.com/"); 
-		
+
 		LoginPageObjects obj = new LoginPageObjects(driver);
 
 		obj.clickOntryForFree().click();
 
-		SignupPageObjects obj1 = new SignupPageObjects(driver);
-		
-		 Thread.sleep(5000);
+		SignupPageObjects spo = new SignupPageObjects(driver);
 
-		obj1.enterFirstName().sendKeys("Suraj");
+		Thread.sleep(5000);
 
-	/*	obj1.enterLastName().sendKeys("Shrawane");
-
-		obj1.enterJobtitle().sendKeys("QA");
-
-		obj1.enterEmail().sendKeys("tester@gmail.com");
-
-		obj1.enterPhone().sendKeys("9876543210");
+		spo.enterFirstName().sendKeys(constants.firstname);
 
 		
-		obj1.clickOnCheckbox().click();
+		spo.enterLastName().sendKeys(constants.lastname);
+		
+		spo.enterJobtitle().sendKeys(constants.jobTitle);
+
+		spo.enterEmail().sendKeys(constants.email);
+
+		spo.enterPhone().sendKeys(constants.phone);
+		spo.enterCompanyname().sendKeys(constants.company);
+
+		/*Select s = new Select(spo.selectEmployee());
+		s.selectByIndex(1);
+		
+
+
+		Select s1= new Select(spo.selectCountry());
+		s.selectByIndex(1);
 		*/
-		Select s=new Select(obj1.selectEmployee());
-		  s.selectByIndex(1);
+	commonMethods.SelectDropdown(spo.selectEmployee(),1);
+	
+	commonMethods.SelectDropdown(spo.selectCountry(),2);
+
+	
+	 // spo.clickOnCheckbox().click();
+
 	}
 
 }

@@ -9,32 +9,38 @@ public class LoginPageObjects {
 	// This driver dont have scope
 	public WebDriver driver;
 
-	private By username = By.xpath("//input[@id='username']");
-	private By password = By.xpath("//input[@id='password']");
-	private By login = By.xpath("//input[@id='Login']");
-	private By tryForFree = By.xpath("//a[@id='signup_link']");
+	private By username = By.xpath("//input[@name='username']");
+	private By password = By.xpath("//input[@name='pw']");
+	private By login = By.xpath("//input[@name='Login']");
+	private By tryForFree = By.xpath("//a[@class='button secondary']");
+
+	private By errorMessage = By.xpath("//div[@id='error']");
 
 	
 	
-	
-	
-
 	public LoginPageObjects(WebDriver driver2) {
-		this.driver=driver2;
+		this.driver = driver2;
 	}
 
 	public WebElement enterUsername() {
-		 return driver.findElement(username);
+		return driver.findElement(username);
 	}
-	
+
 	public WebElement enterPassword() {
-		 return driver.findElement(password);
+		return driver.findElement(password);
 	}
-	
+
 	public WebElement clickOnLogin() {
-		 return driver.findElement(login);
+		return driver.findElement(login);
 	}
+
 	public WebElement clickOntryForFree() {
-		 return driver.findElement(tryForFree);
+		return driver.findElement(tryForFree);
 	}
+
+	public WebElement errorText() {
+		return driver.findElement(errorMessage);
+
+	}
+
 }

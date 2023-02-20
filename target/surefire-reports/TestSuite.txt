@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 33.382 s <<< FAILURE! - in TestSuite
+TestCases.verifyLogin.login[testuser1, secure123](1)  Time elapsed: 0.716 s  <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	Error message is not matching expected [Please check your and password. If you still can't log in, contact your Salesforce administrator., Please check your and password. If you still can't log in, contact your Salesforce administrator.] but found [Please check your username and password. If you still can't log in, contact your Salesforce administrator.]
+	at TestCases.verifyLogin.login(verifyLogin.java:29)
+
+TestCases.verifyLogin.login[testuser2, secure456](2)  Time elapsed: 1.013 s  <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	Error message is not matching expected [Please check your and password. If you still can't log in, contact your Salesforce administrator., Please check your and password. If you still can't log in, contact your Salesforce administrator.] but found [Please check your username and password. If you still can't log in, contact your Salesforce administrator.]
+	at TestCases.verifyLogin.login(verifyLogin.java:29)
+

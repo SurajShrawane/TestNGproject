@@ -11,18 +11,22 @@ public class SignupPageObjects {
 
 	private By firstName = By.xpath("//input[@name='UserFirstName']");
 
-	/*private By lastName = By.xpath("//input[@name='UserLastName']");
-
+	private By lastName = By.xpath("//input[@name='UserLastName']");
+	
 	private By jobTitle = By.xpath("//input[@name='UserTitle']");
 
 	private By email = By.xpath("//input[@name='UserEmail']");
 
 	private By phone = By.xpath("//input[@name='UserPhone']");
 
-	private By checkbox = By.xpath("//div[@class='checkbox']");
-*/
-	 private By employee=By.xpath("//select[@name='CompanyEmployees']");
-	
+	// private By checkbox = By.xpath("//div[@class='checkbox']");
+
+	private By employee = By.xpath("//select[@name='CompanyEmployees']");
+
+	private By company = By.xpath("//input[@name='CompanyName']");
+
+	private By country = By.xpath("//select[@name='CompanyCountry']");
+
 	public SignupPageObjects(WebDriver driver2) {
 		this.driver = driver2;
 	}
@@ -31,14 +35,13 @@ public class SignupPageObjects {
 		return driver.findElement(firstName);
 	}
 
-	/*public WebElement enterLastName() {
+	public WebElement enterLastName() {
 		return driver.findElement(lastName);
 	}
 
 	public WebElement enterJobtitle() {
 		return driver.findElement(jobTitle);
 	}
-
 	public WebElement enterEmail() {
 		return driver.findElement(email);
 	}
@@ -47,12 +50,17 @@ public class SignupPageObjects {
 		return driver.findElement(phone);
 	}
 
-	public WebElement clickOnCheckbox() {
-		return driver.findElement(checkbox);
-	}*/
-	  public WebElement selectEmployee() {
-		  
-		  return driver.findElement(employee);
-		 }
-		 
+	public WebElement selectEmployee() {
+
+		return driver.findElement(employee);
+	}
+
+	public WebElement enterCompanyname() {
+		return driver.findElement(company);
+	}
+
+	public WebElement selectCountry() {
+		return driver.findElement(country);
+	}
+
 }

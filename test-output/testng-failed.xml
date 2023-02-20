@@ -7,7 +7,7 @@
         <methods>
           <include name="openurl"/>
           <include name="closeBrowser"/>
-          <include name="login"/>
+          <include name="login" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- TestCases.verifyLogin -->
     </classes>
